@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<!-- saved from url=(0120)https://abc-notes.data.tech.gov.sg/notes/topic-1-llm-&-prompt-engineering/7.-extra-f-strings-formatting-cheat-sheet.html -->
+<html>
+    <head>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/webpage.js"
+          async=""
+          id="webpage-script"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-view.js"
+          type="module"
+          async=""
+          id="graph-view-script"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-wasm.js"
+          async=""
+          id="graph-wasm-script"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-render-worker.js"
+          async=""
+          id="graph-render-worker-script"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/tinycolor.js"
+          async=""
+          id="tinycolor-script"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/pixi.js"
+          async=""
+          id="pixi-script"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/minisearch.js"
+          async=""
+          id="minisearch-script"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/flowbite.min.js"
+          class=""
+          style="transition: opacity 0.5s ease-in-out"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/saved_resource.js"
+          class=""
+          style="transition: opacity 0.5s ease-in-out"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/index.js"
+          class=""
+          style="transition: opacity 0.5s ease-in-out"
+        ></script>
+        <script
+          src="https://sp-soc-kh.github.io/ai-bootcamp-static/js/graph-data.js"
+          async=""
+          id="graph-data-script"
+          onload='this.onload=null;this.setAttribute("loaded", "true")'
+          loaded="true"
+        ></script>
+        <link
+          rel="alternate"
+          href="https://abc-notes.data.tech.gov.sg/notes/lib/rss.xml"
+          type="application/rss+xml"
+          title="RSS Feed"
+        />
+        <link
+          rel="stylesheet"
+          href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/flowbite.min.css"
+          class=""
+          style="transition: opacity 0.5s ease-in-out"
+        />
+        <link
+          rel="stylesheet"
+          href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/full.css"
+          type="text/css"
+          class=""
+          style="transition: opacity 0.5s ease-in-out"
+        />
+        <link
+          rel="stylesheet"
+          href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/obsidian.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/theme.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/global-variable-styles.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/main-styles.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://sp-soc-kh.github.io/ai-bootcamp-static/css/fix-style.css"
+        />
+      </head>
+      <body
+        style="
+          color: rgb(32, 33, 34);
+          font-family: verdana, sans-serif;
+          font-size: 12px;
+          height: auto;
+        "
+        class="publish css-settings-manager theme-light show-inline-title show-ribbon floating-sidebars is-tablet"
+      >
+        <div class="webpage-container workspace">
+          <div class="document-container markdown-reading-view">
+            <div
+              class="markdown-preview-view markdown-rendered is-readable-line-width"
+            >
+          <pre
+            class="frontmatter language-yaml"
+            tabindex="0"
+            style="display: none"
+          ><code class="language-yaml is-loaded"><span class="token key atrule">icon</span><span class="token punctuation">:</span> RiMeteorLine</code><button class="copy-code-button">Copy</button></pre>
+          <div class="markdown-preview-sizer markdown-preview-section">
+            <ol start="6">
+              <li dir="auto" class="page-title heading fix-heading">
+                  <span id="webpage-icon"
+                    class="cm-iconize-icon"
+                    aria-label="RiMeteorLine"
+                    data-icon="RiMeteorLine"
+                    aria-hidden="true"
+                    style="display: inline-flex; transform: translateY(10px); scale: 0.8"
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16px"
+                      height="16px"
+                    >
+                      <path
+                        d="M21 1V13C21 17.9706 16.9706 22 12 22C7.02944 22 3 17.9706 3 13C3 9.72064 4.75393 6.85093 7.37488 5.27777L14 1.453V4.223L21 1ZM19 4.122L12 7.34567V4.916L8.59717 6.88088C6.47212 8.06588 5.10056 10.2673 5.00531 12.7258L5 13C5 16.866 8.13401 20 12 20C15.7855 20 18.8691 16.9952 18.9959 13.2407L19 13V4.122ZM12 8C14.7614 8 17 10.2386 17 13C17 15.7614 14.7614 18 12 18C9.23858 18 7 15.7614 7 13C7 10.2386 9.23858 8 12 8ZM12 10C10.3431 10 9 11.3431 9 13C9 14.6569 10.3431 16 12 16C13.6569 16 15 14.6569 15 13C15 11.3431 13.6569 10 12 10Z"
+                      ></path></svg>
+                    </span>Extra - F-strings formatting Cheat Sheet</li>
+              </ol>
+            <div class="heading-wrapper">
+              <div class="heading-children">
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="1. Expressions Inside Braces"
+                    dir="auto"
+                    class="heading"
+                    id="1._Expressions_Inside_Braces"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    1. Expressions Inside Braces
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        You can perform operations or call functions directly
+                        within the braces of an F-string.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">name <span class="token operator">=</span> <span class="token string">"Alice"</span>  
+age <span class="token operator">=</span> <span class="token number">30</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">}</span></span><span class="token string"> is </span><span class="token interpolation"><span class="token punctuation">{</span>age <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">}</span></span><span class="token string"> years old next year."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="2. Calling Functions"
+                    dir="auto"
+                    class="heading"
+                    id="2._Calling_Functions"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    2. Calling Functions
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Call functions directly within the F-string braces for
+                        dynamic string formatting.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">def</span> <span class="token function">greet</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"Hello, </span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">}</span></span><span class="token string">!"</span></span>  
+  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>greet<span class="token punctuation">(</span><span class="token string">'Bob'</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="3. Format Specifiers"
+                    dir="auto"
+                    class="heading"
+                    id="3._Format_Specifiers"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    3. Format Specifiers
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Use format specifiers for controlling the format of the
+                        output, such as number of decimals.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">price <span class="token operator">=</span> <span class="token number">49.99</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"The price is </span><span class="token interpolation"><span class="token punctuation">{</span>price<span class="token punctuation">:</span><span class="token format-spec">.2f</span><span class="token punctuation">}</span></span><span class="token string"> dollars."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="4. Dictionary Values"
+                    dir="auto"
+                    class="heading"
+                    id="4._Dictionary_Values"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    4. Dictionary Values
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Access dictionary values directly in an F-string.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">person <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Alice'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">}</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> is </span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> years old."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="5. Date Formatting"
+                    dir="auto"
+                    class="heading"
+                    id="5._Date_Formatting"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    5. Date Formatting
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Format dates using
+                        the&nbsp;<code>datetime</code>&nbsp;module directly
+                        within F-strings.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime  
+now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"The current time is </span><span class="token interpolation"><span class="token punctuation">{</span>now<span class="token punctuation">:</span><span class="token operator">%</span>Y<span class="token operator">-</span><span class="token operator">%</span>m<span class="token operator">-</span><span class="token operator">%</span>d <span class="token operator">%</span>H<span class="token punctuation">:</span><span class="token format-spec">%M</span><span class="token punctuation">}</span></span><span class="token string">."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="6. Multiline F-strings"
+                    dir="auto"
+                    class="heading"
+                    id="6._Multiline_F-strings"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    6. Multiline F-strings
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Create multiline strings without losing the F-string
+                        functionality.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">name <span class="token operator">=</span> <span class="token string">"Alice"</span>  
+profession <span class="token operator">=</span> <span class="token string">"developer"</span>  
+bio <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Name: </span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">}</span></span><span class="token string">\n"</span></span>  
+       <span class="token string-interpolation"><span class="token string">f"Profession: </span><span class="token interpolation"><span class="token punctuation">{</span>profession<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span>bio<span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="7. Conditional Expressions"
+                    dir="auto"
+                    class="heading"
+                    id="7._Conditional_Expressions"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    7. Conditional Expressions
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Embed conditional expressions within F-strings for
+                        dynamic content.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">age <span class="token operator">=</span> <span class="token number">18</span>  
+status <span class="token operator">=</span> <span class="token string">"adult"</span> <span class="token keyword">if</span> age <span class="token operator">&gt;=</span> <span class="token number">18</span> <span class="token keyword">else</span> <span class="token string">"minor"</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"You are an </span><span class="token interpolation"><span class="token punctuation">{</span>status<span class="token punctuation">}</span></span><span class="token string">."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="8. Nesting F-strings"
+                    dir="auto"
+                    class="heading"
+                    id="8._Nesting_F-strings"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    8. Nesting F-strings
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Nest F-strings for complex formatting scenarios.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">from</span> math <span class="token keyword">import</span> pi  
+precision <span class="token operator">=</span> <span class="token number">2</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Pi rounded to </span><span class="token interpolation"><span class="token punctuation">{</span>precision<span class="token punctuation">}</span></span><span class="token string"> decimal places is </span><span class="token interpolation"><span class="token punctuation">{</span>pi<span class="token punctuation">:</span><span class="token punctuation">.</span><span class="token punctuation">{</span>precision<span class="token punctuation">}</span>f<span class="token punctuation">}</span></span><span class="token string">."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="9. Using Braces"
+                    dir="auto"
+                    class="heading"
+                    id="9._Using_Braces"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    9. Using Braces
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        To include literal braces in your string, double them.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"{{Hello}}"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="10. Debugging with F-strings (Python 3.8+)"
+                    dir="auto"
+                    class="heading"
+                    id="10._Debugging_with_F-strings_(Python_3.8+)"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    10. Debugging with F-strings (Python 3.8+)
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Include the variable name with its value for easier
+                        debugging.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">name <span class="token operator">=</span> <span class="token string">"Alice"</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token operator">=</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="11. Alignment and Padding"
+                    dir="auto"
+                    class="heading"
+                    id="11._Alignment_and_Padding"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    11. Alignment and Padding
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        You can align text and add padding directly within an
+                        F-string.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">name <span class="token operator">=</span> <span class="token string">"Alice"</span>  
+<span class="token comment"># Right align with padding  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">:</span><span class="token format-spec">&gt;10</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>  
+<span class="token comment"># Left align with padding  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">:</span><span class="token format-spec">&lt;10</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>  
+<span class="token comment"># Center align with padding  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">:</span><span class="token format-spec">^10</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="12. Thousands Separator"
+                    dir="auto"
+                    class="heading"
+                    id="12._Thousands_Separator"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    12. Thousands Separator
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Format large numbers with commas as thousands separators
+                        for better readability.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">number <span class="token operator">=</span> <span class="token number">1000000</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>number<span class="token punctuation">:</span><span class="token format-spec">,</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="13. Dynamic Format Specifiers"
+                    dir="auto"
+                    class="heading"
+                    id="13._Dynamic_Format_Specifiers"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    13. Dynamic Format Specifiers
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Dynamically specify format options using variables.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">width <span class="token operator">=</span> <span class="token number">10</span>  
+precision <span class="token operator">=</span> <span class="token number">4</span>  
+number <span class="token operator">=</span> <span class="token number">12.34567</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"result: </span><span class="token interpolation"><span class="token punctuation">{</span>number<span class="token punctuation">:</span><span class="token punctuation">{</span>width<span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token punctuation">{</span>precision<span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="14. Using Objects"
+                    dir="auto"
+                    class="heading"
+                    id="14._Using_Objects"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    14. Using Objects
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Directly access object attributes and methods.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>  
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name  
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> age  
+    <span class="token keyword">def</span> <span class="token function">greet</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"Hello, my name is </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token string">."</span></span>  
+  
+person <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">.</span>greet<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string"> I am </span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">.</span>age<span class="token punctuation">}</span></span><span class="token string"> years old."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="15. Binary, Hexadecimal, and Octal Formatting"
+                    dir="auto"
+                    class="heading"
+                    id="15._Binary,_Hexadecimal,_and_Octal_Formatting"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    15. Binary, Hexadecimal, and Octal Formatting
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Convert numbers into binary, hexadecimal, or octal
+                        formats.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">number <span class="token operator">=</span> <span class="token number">255</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Binary: </span><span class="token interpolation"><span class="token punctuation">{</span>number<span class="token punctuation">:</span><span class="token format-spec">b</span><span class="token punctuation">}</span></span><span class="token string">, Hex: </span><span class="token interpolation"><span class="token punctuation">{</span>number<span class="token punctuation">:</span><span class="token format-spec">x</span><span class="token punctuation">}</span></span><span class="token string">, Octal: </span><span class="token interpolation"><span class="token punctuation">{</span>number<span class="token punctuation">:</span><span class="token format-spec">o</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="16. Combining F-strings with Dictionaries for Data Unpacking"
+                    dir="auto"
+                    class="heading"
+                    id="16._Combining_F-strings_with_Dictionaries_for_Data_Unpacking"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    16. Combining F-strings with Dictionaries for Data Unpacking
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Unpack and format data from dictionaries elegantly.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token string">"age"</span><span class="token punctuation">:</span> <span class="token number">25</span><span class="token punctuation">}</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>data<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> is </span><span class="token interpolation"><span class="token punctuation">{</span>data<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> years old."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="17. Multiline Expressions"
+                    dir="auto"
+                    class="heading"
+                    id="17._Multiline_Expressions"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    17. Multiline Expressions
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Use parentheses for longer expressions that span
+                        multiple lines.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">x <span class="token operator">=</span> <span class="token number">10</span>  
+y <span class="token operator">=</span> <span class="token number">5</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Sum: </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token punctuation">(</span>x <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">\n"</span></span>  
+      <span class="token string-interpolation"><span class="token string">f"Difference: </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token punctuation">(</span>x <span class="token operator">-</span> y<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">\n"</span></span>  
+      <span class="token string-interpolation"><span class="token string">f"Product: </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token punctuation">(</span>x <span class="token operator">*</span> y<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="18. Using Lambdas"
+                    dir="auto"
+                    class="heading"
+                    id="18._Using_Lambdas"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    18. Using Lambdas
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Inline lambda functions for quick transformations or
+                        calculations.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Square of 5: </span><span class="token interpolation"><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token operator">*</span>x<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="19. Escaping Curly Braces"
+                    dir="auto"
+                    class="heading"
+                    id="19._Escaping_Curly_Braces"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    19. Escaping Curly Braces
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Use double curly braces to escape them in F-strings.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"{{{{double braces}}}} are used to escape in F-strings."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="20. Complex Numbers Formatting"
+                    dir="auto"
+                    class="heading"
+                    id="20._Complex_Numbers_Formatting"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    20. Complex Numbers Formatting
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Format complex numbers by accessing their real and
+                        imaginary parts.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">complex_number <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">4j</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"The real part is </span><span class="token interpolation"><span class="token punctuation">{</span>complex_number<span class="token punctuation">.</span>real<span class="token punctuation">}</span></span><span class="token string"> and the imaginary part is </span><span class="token interpolation"><span class="token punctuation">{</span>complex_number<span class="token punctuation">.</span>imag<span class="token punctuation">}</span></span><span class="token string">."</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="21. Formatting with Percentages"
+                    dir="auto"
+                    class="heading"
+                    id="21._Formatting_with_Percentages"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    21. Formatting with Percentages
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">Easily format numbers as percentages.</p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">completion <span class="token operator">=</span> <span class="token number">0.756</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Task completed: </span><span class="token interpolation"><span class="token punctuation">{</span>completion<span class="token punctuation">:</span><span class="token format-spec">.2%</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="22. Safe String Interpolation with `str.format()`"
+                    dir="auto"
+                    class="heading"
+                    id="22._Safe_String_Interpolation_with `str.format()`"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    22. Safe String Interpolation with&nbsp;<code
+                      >str.format()</code
+                    >
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        While not a direct feature of F-strings, combining them
+                        with&nbsp;<code>str.format()</code>&nbsp;can offer a
+                        safer way to dynamically insert values that aren't known
+                        until runtime, thus avoiding code injection risks.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">user_input <span class="token operator">=</span> <span class="token string">"{name} is {age} years old."</span>  
+<span class="token comment"># Safe interpolation  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>user_input<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="23. Reusing Calculated Values in F-strings"
+                    dir="auto"
+                    class="heading"
+                    id="23._Reusing_Calculated_Values_in_F-strings"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    23. Reusing Calculated Values in F-strings
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        By using a lambda function, you can calculate values
+                        once and reuse them within the same F-string.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">result <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> x<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"The number is </span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> and its square is </span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string">."</span></span><span class="token punctuation">)</span>
+
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="24. Formatting Paths and Files"
+                    dir="auto"
+                    class="heading"
+                    id="24._Formatting_Paths_and_Files"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    24. Formatting Paths and Files
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        F-strings can be particularly useful for dynamically
+                        generating file paths or URLs.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">filename <span class="token operator">=</span> <span class="token string">"report"</span>  
+date <span class="token operator">=</span> <span class="token string">"2023-01-01"</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"./data/</span><span class="token interpolation"><span class="token punctuation">{</span>filename<span class="token punctuation">}</span></span><span class="token string">_</span><span class="token interpolation"><span class="token punctuation">{</span>date<span class="token punctuation">}</span></span><span class="token string">.txt"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="25. Embedding Expressions for Object Instantiation"
+                    dir="auto"
+                    class="heading"
+                    id="25._Embedding_Expressions_for_Object_Instantiation"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    25. Embedding Expressions for Object Instantiation
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Instantiate objects directly within an F-string.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">class</span> <span class="token class-name">Point</span><span class="token punctuation">:</span>  
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        self<span class="token punctuation">.</span>x <span class="token operator">=</span> x  
+        self<span class="token punctuation">.</span>y <span class="token operator">=</span> y  
+    <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"Point(</span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>x<span class="token punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>y<span class="token punctuation">}</span></span><span class="token string">)"</span></span>  
+  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"New point: </span><span class="token interpolation"><span class="token punctuation">{</span>Point<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="26. Formatting Exceptions"
+                    dir="auto"
+                    class="heading"
+                    id="26._Formatting_Exceptions"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    26. Formatting Exceptions
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Use F-strings to format exception messages for clearer
+                        error reporting.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">try</span><span class="token punctuation">:</span>  
+    <span class="token comment"># Potentially problematic code  </span>
+    x <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span>  
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>  
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"An error occurred: </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="27. Dynamic Padding with Variables"
+                    dir="auto"
+                    class="heading"
+                    id="27._Dynamic_Padding_with_Variables"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    27. Dynamic Padding with Variables
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Control padding dynamically by using variables within
+                        the format specifier.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">name <span class="token operator">=</span> <span class="token string">"Alice"</span>  
+pad <span class="token operator">=</span> <span class="token number">20</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>name<span class="token punctuation">:</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>pad<span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="28. Using F-strings with Maps and Filters"
+                    dir="auto"
+                    class="heading"
+                    id="28._Using_F-strings_with_Maps_and_Filters"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    28. Using F-strings with Maps and Filters
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        F-strings can be used
+                        inside&nbsp;<code>map()</code>&nbsp;and&nbsp;<code>filter()</code>&nbsp;for
+                        more readable code.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded">names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token string">"Bob"</span><span class="token punctuation">,</span> <span class="token string">"Charlie"</span><span class="token punctuation">]</span>  
+upper_names <span class="token operator">=</span> <span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>x<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> names<span class="token punctuation">)</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>upper_names<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="29. Custom Object Formatting"
+                    dir="auto"
+                    class="heading"
+                    id="29._Custom_Object_Formatting"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    29. Custom Object Formatting
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        Define how your custom objects should be formatted
+                        within F-strings by implementing
+                        the&nbsp;<code>__format__</code>&nbsp;method.
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>  
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name  
+    <span class="token keyword">def</span> <span class="token function">__format__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> format_spec<span class="token punctuation">)</span><span class="token punctuation">:</span>  
+        <span class="token keyword">if</span> format_spec <span class="token operator">==</span> <span class="token string">'upper'</span><span class="token punctuation">:</span>  
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>name<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span>  
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>name  
+  
+person <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Alice"</span><span class="token punctuation">)</span>  
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">:</span><span class="token format-spec">upper</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="heading-wrapper">
+                  <h2
+                    data-heading="30. Inline Comments"
+                    dir="auto"
+                    class="heading"
+                    id="30._Inline_Comments"
+                  >
+                    <div
+                      class="heading-collapse-indicator collapse-indicator collapse-icon"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="svg-icon right-triangle"
+                      >
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg>
+                    </div>
+                    30. Inline Comments
+                  </h2>
+                  <div class="heading-children">
+                    <div>
+                      <p dir="auto">
+                        While not a feature of F-strings themselves, you can use
+                        comments to clarify complex expressions within them
+                        (though this requires breaking the expression into
+                        multiple steps).
+                      </p>
+                    </div>
+                    <div>
+                      <pre
+                        class="language-python"
+                        tabindex="0"
+                      ><code class="language-python is-loaded"><span class="token comment"># Intended for readability, not direct execution within F-strings  </span>
+number <span class="token operator">=</span> <span class="token number">123456.789</span>  
+<span class="token comment"># Format number with commas and 2 decimal places  </span>
+formatted_number <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>number<span class="token punctuation">:</span><span class="token format-spec">,.2f</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>  <span class="token comment"># Comment: Format as a string with commas  </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>formatted_number<span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                    </div>
+                    <div class="mod-footer"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="loading-icon" style="left: 737.5px; top: 303px">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
